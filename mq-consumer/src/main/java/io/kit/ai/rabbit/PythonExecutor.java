@@ -64,7 +64,7 @@ public class PythonExecutor {
                     "--scale", "15",
                     "--height", Optional.ofNullable(message.getHeight()).orElse("512"),
                     "--width", Optional.ofNullable(message.getWidth()).orElse("512"),
-                    "--module", "CompVis/stable-diffusion-v1-4",
+                    "--module", "stabilityai/stable-diffusion-2-1",
                     "--prompt", describe);
             processBuilder.redirectErrorStream(true);
 
