@@ -1,0 +1,85 @@
+kit:
+  name: 消息队列处理引擎
+  version: 1.0.0
+  copyrightYear: 2024
+  profile: /apps/kit/fiels
+  addressEnabled: false
+
+server:
+  port: 8081
+  servlet:
+    context-path: /
+  tomcat:
+    uri-encoding: UTF-8
+    accept-count: 1000
+    threads:
+      max: 800
+      min-spare: 100
+
+logging:
+  level:
+    com.ruoyi: debug
+    org:
+      springframework: warn
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+
+spring:
+  messages:
+    basename: i18n/messages
+  profiles:
+    active: druid
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+  devtools:
+    restart:
+      enabled: true
+  rabbitmq:
+    host:
+    port:
+    username:
+    password:
+
+mail:
+  cacheSuffix: email_code_key_
+  cacheMin: 10
+
+token:
+  header: Authorization
+  secret:
+  expireTime: 30
+
+
+swagger:
+  enabled: true
+  pathMapping: /dev-api
+
+xss:
+  enabled: true
+  excludes: /system/notice
+  urlPatterns: /system/*,/monitor/*,/tool/*
+
+request:
+  route:
+    public: /map/weather.*
+
+mq:
+  url:
+    token:
+    escalation:
+    upload:
+  pyPath:
+  scriptPath:
+  outPutPath: D:\kit\cache
+  queue: test_queue
+  exchange: test_exchange
+  routing: my_vhost
+  serverUrl:
+    upload:
+    step: 
